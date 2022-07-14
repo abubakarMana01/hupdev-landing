@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/hupdev-landing/static/css/main.ebf7336d.css",
+    "main.js": "/hupdev-landing/static/js/main.d234120e.js",
+    "static/media/work-bg.png": "/hupdev-landing/static/media/work-bg.6358a57cab2c16317565.png",
+    "static/media/home-bg.png": "/hupdev-landing/static/media/home-bg.b350b3a875e52f2ee8b2.png",
+    "static/media/project-img1.svg": "/hupdev-landing/static/media/project-img1.4bfdd46869d4e8e5346158c968ab0d3e.svg",
+    "static/media/team-member-5.png": "/hupdev-landing/static/media/team-member-5.b19902ad3ea7f237d6c4.png",
+    "static/media/team-member-6.png": "/hupdev-landing/static/media/team-member-6.aa1656205938b7611232.png",
+    "static/media/team-member-1.png": "/hupdev-landing/static/media/team-member-1.2859e0f68301ac850f44.png",
+    "static/media/team-member-2.png": "/hupdev-landing/static/media/team-member-2.0c3fb347628e00ab6e10.png",
+    "static/media/team-member-7.png": "/hupdev-landing/static/media/team-member-7.52f52a096be0332e53bf.png",
+    "static/media/team-member-3.png": "/hupdev-landing/static/media/team-member-3.7ee828a55cf581199af8.png",
+    "static/media/team-member-8.png": "/hupdev-landing/static/media/team-member-8.3f271b35b96c642535bc.png",
+    "static/media/team-member-4.png": "/hupdev-landing/static/media/team-member-4.4f04bb6b8cef63c46032.png",
+    "static/media/quotation-mark-white.svg": "/hupdev-landing/static/media/quotation-mark-white.c1ae36c552da100fbb21cc82cca1431c.svg",
+    "static/media/quotation-mark.svg": "/hupdev-landing/static/media/quotation-mark.0ee9fcd31aa3b9078918d6a86a1b60fa.svg",
+    "static/media/services-bg.svg": "/hupdev-landing/static/media/services-bg.6adca3d8efa547678503698adaf495b8.svg",
+    "index.html": "/hupdev-landing/index.html",
+    "static/media/logo.svg": "/hupdev-landing/static/media/logo.0301adc8898cbd227ae142fd08828272.svg",
+    "static/media/logo-sm.svg": "/hupdev-landing/static/media/logo-sm.62d3cde4246dd0ad6a6a26c6d0e590ab.svg",
+    "static/media/round-ellipse.svg": "/hupdev-landing/static/media/round-ellipse.a5f9c888dcf3dca6ee40b9e10e8c032c.svg",
+    "static/media/down-arrow.svg": "/hupdev-landing/static/media/down-arrow.45a1a7112bf6255f362b38eaa86ac6de.svg",
+    "main.ebf7336d.css.map": "/hupdev-landing/static/css/main.ebf7336d.css.map",
+    "main.d234120e.js.map": "/hupdev-landing/static/js/main.d234120e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ebf7336d.css",
+    "static/js/main.d234120e.js"
+  ]
+}
