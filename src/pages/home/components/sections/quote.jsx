@@ -9,7 +9,11 @@ export default function Quote({ author, text, darkVariant = false }) {
   return (
     <Wrapper darkVariant={darkVariant}>
       <Container>
-        <Fade duration={1500} style={{ display: "grid", placeItems: "center" }}>
+        <Fade
+          duration={1500}
+          triggerOnce
+          style={{ display: "grid", placeItems: "center" }}
+        >
           <img
             src={darkVariant ? quotationMarkWhite : quotationMark}
             alt="quotes"
@@ -21,7 +25,7 @@ export default function Quote({ author, text, darkVariant = false }) {
           </h2>
         </Fade>
 
-        <Fade direction="up">
+        <Fade triggerOnce delay={500}>
           <p style={{ color: darkVariant ? colors.white : colors.black }}>
             - {author}
           </p>
@@ -35,6 +39,7 @@ const Wrapper = styled.section`
   background-color: ${({ darkVariant }) =>
     darkVariant ? colors.black : colors.white};
   display: flex;
+  min-height: 100vh;
 `;
 
 const Container = styled.div`
@@ -56,6 +61,7 @@ const Container = styled.div`
     font-weight: 600;
     text-align: center;
     margin-block: 3rem;
+    font-style: italic;
   }
 
   p {

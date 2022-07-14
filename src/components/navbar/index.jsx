@@ -3,44 +3,76 @@ import styled from "styled-components";
 import { colors } from "constants";
 import logo from "assets/images/logo-sm.svg";
 import { Fade } from "react-awesome-reveal";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
     <Container>
-      <Fade triggerOnce>
-        <Logo>
-          <img src={logo} alt="logo" />
+      <Logo>
+        <img src={logo} alt="logo" />
 
-          <span>
-            Hup<span style={{ color: colors.primary }}>Dev</span>
-          </span>
-        </Logo>
-      </Fade>
+        <span>
+          Hup<span style={{ color: colors.primary }}>Dev</span>
+        </span>
+      </Logo>
 
-      <Navlinks>
+      <NavLinks>
         <Fade triggerOnce direction="down">
           <li>
-            <a href="/work">Work</a>
+            <NavLink
+              to="/"
+              style={({ isActive }) => ({
+                color: isActive ? colors.primary : colors.white,
+              })}
+            >
+              Home
+            </NavLink>
+          </li>
+        </Fade>
+        <Fade triggerOnce direction="down">
+          <li>
+            <NavLink
+              to="/work"
+              style={({ isActive }) => ({
+                color: isActive ? colors.primary : colors.white,
+              })}
+            >
+              Work
+            </NavLink>
           </li>
         </Fade>
         <Fade triggerOnce direction="down" delay={200}>
           <li>
-            <a href="/about">About</a>
+            <NavLink
+              to="/about"
+              style={({ isActive }) => ({
+                color: isActive ? colors.primary : colors.white,
+              })}
+            >
+              About
+            </NavLink>
           </li>
         </Fade>
         <Fade triggerOnce direction="down" delay={400}>
           <li>
-            <a href="/services">Services</a>
+            <NavLink
+              to="/services"
+              style={({ isActive }) => ({
+                color: isActive ? colors.primary : colors.white,
+              })}
+            >
+              Services
+            </NavLink>
           </li>
         </Fade>
         <Blob>
-          <li>
-            <Fade triggerOnce direction="down" delay={600}>
-              <a href="/contact">Contact us</a>
-            </Fade>
-          </li>
+          <Fade triggerOnce direction="down" delay={600}>
+            <li>
+              <NavLink to="/contact">Contact us</NavLink>
+            </li>
+          </Fade>
         </Blob>
-      </Navlinks>
+      </NavLinks>
     </Container>
   );
 }
@@ -49,18 +81,27 @@ const Container = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 1rem;
+  padding-inline: 3rem;
   color: ${colors.white};
   padding-block: 2.5rem;
 
-  max-width: 1100px;
+  max-width: 1024px;
   width: 100%;
   margin-inline: auto;
+
+  @media (max-width: 728px) {
+    padding-inline: 1.5rem;
+  }
+
+  @media (max-width: 400px) {
+    padding-inline: 1rem;
+  }
 `;
 
 const Logo = styled.div`
   display: flex;
   align-items: center;
+  z-index: 1;
 
   img {
     width: 50px;
@@ -73,11 +114,12 @@ const Logo = styled.div`
   }
 `;
 
-const Navlinks = styled.ul`
+const NavLinks = styled.ul`
   list-style: none;
   display: flex;
   gap: 3rem;
   margin-left: 2rem;
+  z-index: 1;
 
   a {
     color: ${colors.white};
@@ -90,7 +132,7 @@ const Navlinks = styled.ul`
     }
   }
 
-  @media (max-width: 678px) {
+  @media (max-width: 700px) {
     display: none;
   }
 `;

@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import About from "./components/sections/about";
+import { AboutSection } from "components";
 import Connect from "./components/sections/connect";
 import FeaturedWorks from "./components/sections/featuredWorks";
 
-import Hero from "./components/sections/hero";
+import Hero from "components/hero";
 import Quote from "./components/sections/quote";
 
 export default function Home() {
@@ -17,7 +17,15 @@ export default function Home() {
         author="Steve Jobs"
       />
 
-      <About />
+      <AboutSection
+        title="We are HupDev."
+        details={[
+          "We are a remote-based creative digital agency with a zeal to build up cool and meaningful ideas, brands, systems, companies from ground up to success.",
+          "Nothing changes without creation and innovation. We are here to build.",
+          "Our passion is to make your desired vision a reality. With exceptional skills, sympathetic design, and a creative mindset, we can take on any challenge.",
+        ]}
+        cta="Our services"
+      />
 
       <Quote
         text="Ideas without actions are worthless"

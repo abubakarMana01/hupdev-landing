@@ -9,17 +9,17 @@ export default function Footer() {
       <Container>
         <h2>Let's build something great together</h2>
 
+        <LetsGoContainer>
+          <div />
+          <p>Let's go</p>
+        </LetsGoContainer>
+
         <BottomContainer>
           <LeftContainer>
             <p>Drop us a line and we'll get in touch</p>
             <EmailAndContact href="mailto:hello@hupdev.com">
               hello@hupdev.com
             </EmailAndContact>
-
-            <LetsGoContainer>
-              <div />
-              <p>Let's go</p>
-            </LetsGoContainer>
 
             <MadebyContainer>
               Made with from <span>HupDev</span>
@@ -77,7 +77,7 @@ const Wrapper = styled.footer`
 `;
 
 const Container = styled.div`
-  max-width: 1100px;
+  max-width: 1024px;
   margin-inline: auto;
   padding-inline: 3rem;
 
@@ -86,13 +86,17 @@ const Container = styled.div`
     font-size: clamp(1.25rem, 4vw, 1.5rem);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 728px) {
     padding-inline: 1.5rem;
+  }
+
+  @media (max-width: 400px) {
+    padding-inline: 1rem;
   }
 `;
 
 const LetsGoContainer = styled.div`
-  margin-top: 1rem;
+  margin-block: 3rem;
   display: flex;
   align-items: center;
 
@@ -104,7 +108,7 @@ const LetsGoContainer = styled.div`
   }
 
   p {
-    font-size: clamp(0.875rem, 5vw, 1rem);
+    font-size: 0.875rem;
     font-weight: 500;
     margin-left: -15px;
   }
@@ -115,6 +119,11 @@ const BottomContainer = styled.div`
   justify-content: space-between;
   align-items: stretch;
   margin-top: 2rem;
+
+  @media (max-width: 520px) {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
 `;
 
 const LeftContainer = styled.div`
@@ -123,13 +132,13 @@ const LeftContainer = styled.div`
   flex-direction: column;
 
   p {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 `;
 
 const RightContainer = styled.div`
   display: flex;
-  flex: 0.4;
+  flex: 0.3;
   justify-content: space-between;
   gap: 1.5rem;
 
@@ -137,12 +146,12 @@ const RightContainer = styled.div`
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.3rem;
   }
 
   a {
     display: block;
-    font-size: 1rem;
+    font-size: 0.875rem;
     color: ${colors.white};
     transition: color 200ms ease;
 
@@ -150,11 +159,20 @@ const RightContainer = styled.div`
       color: ${colors.primary};
     }
   }
+
+  @media (max-width: 520px) {
+    justify-content: flex-start;
+    gap: 3.5rem;
+
+    ul {
+      gap: 1rem;
+    }
+  }
 `;
 
 const EmailAndContact = styled.a`
   display: block;
-  font-size: 1rem;
+  font-size: 0.875rem;
   margin-top: 0.5rem;
   text-decoration: underline;
   cursor: pointer;
@@ -166,5 +184,9 @@ const MadebyContainer = styled.p`
 
   span {
     color: ${colors.primary};
+  }
+
+  @media (max-width: 520px) {
+    margin-top: 1rem;
   }
 `;

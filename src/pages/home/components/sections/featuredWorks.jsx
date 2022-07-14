@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { colors } from "constants";
-import Project from "../project";
+import { ProjectWork } from "components";
 
 export default function FeaturedWorks() {
   return (
@@ -16,7 +16,9 @@ export default function FeaturedWorks() {
       </Header>
       <ProjectsWrapper>
         <ProjectsContainer>
-          <Project />
+          <ProjectWork />
+          <ProjectWork />
+          <ProjectWork />
         </ProjectsContainer>
 
         <ProjectBottomOrangeLineDivider />
@@ -75,6 +77,26 @@ const ProjectsWrapper = styled.section`
   background-color: ${colors.black};
   color: ${colors.white};
   display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+`;
+
+const ProjectsContainer = styled.div`
+  display: flex;
+  overflow-x: scroll;
+  max-width: 1024px;
+  margin-inline: auto;
+  gap: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const ProjectBottomOrangeLineDivider = styled.span`
@@ -99,19 +121,4 @@ const Divider = styled.span`
   width: 100%;
   height: 1px;
   background-color: #333;
-`;
-
-const ProjectsContainer = styled.div`
-  max-width: 1100px;
-  width: 100%;
-  margin-inline: auto;
-  padding-inline: 3rem;
-  display: flex;
-  height: 100vh;
-
-  @media (max-width: 768px) {
-    /* margin-block: 2.5rem; */
-    height: 100%;
-    padding-inline: 1.5rem;
-  }
 `;
