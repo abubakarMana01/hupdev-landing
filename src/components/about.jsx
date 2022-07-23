@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import { colors } from "constants";
-import { Fade } from "react-awesome-reveal";
-import logo from "assets/images/logo.svg";
-import BlobText from "./blobText";
+import React from 'react'
+import styled from 'styled-components'
+import { colors } from 'constants'
+import { Fade } from 'react-awesome-reveal'
+import logo from 'assets/images/logo.svg'
+import BlobText from './blobText'
 
 export default function About({ title, details, cta, reverse = false }) {
   return (
@@ -11,7 +11,7 @@ export default function About({ title, details, cta, reverse = false }) {
       <Fade triggerOnce>
         <Container reverse={reverse}>
           <Image>
-            <img src={logo} alt="logo" />
+            <img src={logo} alt='logo' />
           </Image>
 
           <Details>
@@ -23,14 +23,14 @@ export default function About({ title, details, cta, reverse = false }) {
 
             {cta && (
               <BlobContainer>
-                <BlobText text="Our services" />
+                <BlobText text='Our services' variant='dark' />
               </BlobContainer>
             )}
           </Details>
         </Container>
       </Fade>
     </Wrapper>
-  );
+  )
 }
 
 const Wrapper = styled.section`
@@ -44,20 +44,20 @@ const Wrapper = styled.section`
   @media (max-width: 400px) {
     padding-inline: 1rem;
   }
-`;
+`
 
 const Container = styled.div`
   max-width: 1024px;
   margin-inline: auto;
   display: flex;
   justify-content: space-between;
-  flex-direction: ${({ reverse }) => (reverse ? "row-reverse" : "row")};
+  flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
   gap: 2rem;
 
   @media (max-width: 678px) {
     flex-direction: column;
   }
-`;
+`
 
 const Image = styled.div`
   flex: 0.5;
@@ -77,7 +77,7 @@ const Image = styled.div`
       max-width: 250px;
     }
   }
-`;
+`
 
 const Details = styled.div`
   flex: 0.5;
@@ -125,8 +125,8 @@ const Details = styled.div`
       justify-content: center;
     }
   }
-`;
+`
 
 const BlobContainer = styled.div`
   flex: 1;
-`;
+`

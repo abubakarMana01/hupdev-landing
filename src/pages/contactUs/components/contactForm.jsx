@@ -1,31 +1,28 @@
-import { colors } from "constants";
-import React from "react";
-import styled from "styled-components";
+import { colors } from 'constants'
+import React from 'react'
+import styled from 'styled-components'
 
 export default function ContactForm() {
   return (
     <Wrapper>
-      <FadeContainer>
-        <TopFade />
-      </FadeContainer>
       <Container>
         <h1>We reply quickly</h1>
 
         <FormContainer>
           <div>
-            <label htmlFor="nameOrCompany">Name or Company</label>
-            <input type="text" placeholder="E.g, John Doe" />
+            <label htmlFor='nameOrCompany'>Name or Company</label>
+            <input type='text' placeholder='E.g, John Doe' />
 
-            <label htmlFor="email">Email address</label>
-            <input type="text" placeholder="E.g, johndoe@company.com" />
+            <label htmlFor='email'>Email address</label>
+            <input type='text' placeholder='E.g, johndoe@company.com' />
 
-            <label htmlFor="nameOrCompany">Message</label>
+            <label htmlFor='nameOrCompany'>Message</label>
             <textarea
-              name="message"
-              id="message"
-              cols="30"
-              rows="10"
-              placeholder="Write your message here..."
+              name='message'
+              id='message'
+              cols='30'
+              rows='10'
+              placeholder='Write your message here...'
             ></textarea>
 
             <SendButton>Send Message</SendButton>
@@ -54,23 +51,19 @@ export default function ContactForm() {
             </Categories>
 
             <BudgetContainer>
-              <label htmlFor="budget">
+              <label htmlFor='budget'>
                 What is your budget for the project?
               </label>
               <div>
                 <span>$</span>
-                <input type="number" id="budget" />
+                <input type='number' id='budget' min={0} />
               </div>
             </BudgetContainer>
           </AboutProject>
         </FormContainer>
       </Container>
-
-      <FadeContainer>
-        <BottomFade />
-      </FadeContainer>
     </Wrapper>
-  );
+  )
 }
 
 const Wrapper = styled.section`
@@ -78,7 +71,7 @@ const Wrapper = styled.section`
   min-height: 100vh;
   display: grid;
   place-items: center;
-`;
+`
 
 const Container = styled.div`
   min-height: 400px;
@@ -100,7 +93,7 @@ const Container = styled.div`
     width: 100%;
     border: 1px solid ${colors.black};
     padding: 0.5em 0.75em;
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 
   @media (max-width: 728px) {
@@ -110,7 +103,7 @@ const Container = styled.div`
   @media (max-width: 400px) {
     padding-inline: 1rem;
   }
-`;
+`
 
 const FormContainer = styled.form`
   margin: 2rem 0 2.5rem;
@@ -144,7 +137,7 @@ const FormContainer = styled.form`
   @media (max-width: 680px) {
     flex-direction: column;
   }
-`;
+`
 
 const SendButton = styled.button`
   border: 0;
@@ -160,18 +153,18 @@ const SendButton = styled.button`
   &:hover {
     opacity: 0.9;
   }
-`;
+`
 
 const AboutProject = styled.div`
   h2 {
     font-size: 0.875rem;
     font-weight: 400;
   }
-`;
+`
 
 const Categories = styled.div`
   margin-block: 1rem;
-`;
+`
 
 const CategoryContainer = styled.button`
   background-color: ${colors.grey};
@@ -196,7 +189,7 @@ const CategoryContainer = styled.button`
     font-size: 0.875rem;
     font-weight: 500;
   }
-`;
+`
 
 const BudgetContainer = styled.form`
   input {
@@ -213,25 +206,6 @@ const BudgetContainer = styled.form`
   div > span {
     position: absolute;
     right: 10px;
-    top: 10px;
+    top: 7.5px;
   }
-`;
-
-const FadeContainer = styled.div`
-  width: 100%;
-  height: 40vh;
-`;
-
-const TopFade = styled.div`
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(#202020 0%, rgba(255, 255, 255));
-  z-index: -1;
-`;
-
-const BottomFade = styled.div`
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(255, 255, 255) 0%, ${colors.black});
-  z-index: -1;
-`;
+`

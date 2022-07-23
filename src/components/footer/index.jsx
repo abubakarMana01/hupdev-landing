@@ -1,7 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { colors } from "../../constants";
-import footerBg from "../../assets/images/logo-sm.svg";
+import React from 'react'
+import styled from 'styled-components'
+import { colors } from '../../constants'
+import footerBg from '../../assets/images/logo-sm.svg'
+import { BlobText } from 'components'
 
 export default function Footer() {
   return (
@@ -10,14 +11,13 @@ export default function Footer() {
         <h2>Let's build something great together</h2>
 
         <LetsGoContainer>
-          <div />
-          <p>Let's go</p>
+          <BlobText text="Let's go" />
         </LetsGoContainer>
 
         <BottomContainer>
           <LeftContainer>
             <p>Drop us a line and we'll get in touch</p>
-            <EmailAndContact href="mailto:hello@hupdev.com">
+            <EmailAndContact href='mailto:hello@hupdev.com'>
               hello@hupdev.com
             </EmailAndContact>
 
@@ -29,41 +29,41 @@ export default function Footer() {
           <RightContainer>
             <ul>
               <li>
-                <a href="/">Home</a>
+                <a href='/'>Home</a>
               </li>
               <li>
-                <a href="/work">Work</a>
+                <a href='/work'>Work</a>
               </li>
               <li>
-                <a href="/about">About</a>
+                <a href='/about'>About</a>
               </li>
               <li>
-                <a href="/services">Services</a>
+                <a href='/services'>Services</a>
               </li>
               <li>
-                <a href="/contact">Contact</a>
+                <a href='/contact'>Contact</a>
               </li>
             </ul>
 
             <ul>
               <li>
-                <a href="/">Instagram</a>
+                <a href='/'>Instagram</a>
               </li>
               <li>
-                <a href="/">Twitter</a>
+                <a href='/'>Twitter</a>
               </li>
               <li>
-                <a href="/">Facebook</a>
+                <a href='/'>Facebook</a>
               </li>
               <li>
-                <a href="/">LinkedIn</a>
+                <a href='/'>LinkedIn</a>
               </li>
             </ul>
           </RightContainer>
         </BottomContainer>
       </Container>
     </Wrapper>
-  );
+  )
 }
 
 const Wrapper = styled.footer`
@@ -74,7 +74,7 @@ const Wrapper = styled.footer`
   background-image: url(${footerBg});
   background-repeat: no-repeat;
   background-position: bottom right;
-`;
+`
 
 const Container = styled.div`
   max-width: 1024px;
@@ -93,26 +93,11 @@ const Container = styled.div`
   @media (max-width: 400px) {
     padding-inline: 1rem;
   }
-`;
+`
 
 const LetsGoContainer = styled.div`
   margin-block: 3rem;
-  display: flex;
-  align-items: center;
-
-  div {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: ${colors.primary};
-  }
-
-  p {
-    font-size: 0.875rem;
-    font-weight: 500;
-    margin-left: -15px;
-  }
-`;
+`
 
 const BottomContainer = styled.div`
   display: flex;
@@ -124,7 +109,7 @@ const BottomContainer = styled.div`
     flex-direction: column-reverse;
     gap: 2rem;
   }
-`;
+`
 
 const LeftContainer = styled.div`
   margin-top: 1rem;
@@ -134,7 +119,7 @@ const LeftContainer = styled.div`
   p {
     font-size: 0.875rem;
   }
-`;
+`
 
 const RightContainer = styled.div`
   display: flex;
@@ -168,7 +153,7 @@ const RightContainer = styled.div`
       gap: 1rem;
     }
   }
-`;
+`
 
 const EmailAndContact = styled.a`
   display: block;
@@ -177,7 +162,7 @@ const EmailAndContact = styled.a`
   text-decoration: underline;
   cursor: pointer;
   color: ${colors.primary};
-`;
+`
 
 const MadebyContainer = styled.p`
   margin-top: auto;
@@ -189,4 +174,4 @@ const MadebyContainer = styled.p`
   @media (max-width: 520px) {
     margin-top: 1rem;
   }
-`;
+`

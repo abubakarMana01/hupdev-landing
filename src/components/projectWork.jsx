@@ -1,35 +1,34 @@
-import React from "react";
-import styled from "styled-components";
-import { colors } from "constants";
-import projectImg from "assets/images/projects/project-img1.svg";
+import React from 'react'
+import styled from 'styled-components'
+import { colors } from 'constants'
+import projectImg from 'assets/images/projects/project-img1.svg'
+import { motion } from 'framer-motion'
 
-export default function ProjectWork({ reverse = false }) {
+export default function ProjectWork({ data, reverse = false }) {
   return (
-    <Wrapper>
+    <Wrapper
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ type: 'tween' }}
+      layout
+    >
       <Container reverse={reverse}>
         <ImageContainer>
-          <img src={projectImg} alt="project" />
+          <img src={projectImg} alt='project' />
         </ImageContainer>
 
         <Details>
-          <h3>UI/UX Design, Mobile and Web Development</h3>
-          <h2>Nigerian B2C E-commerce Brand</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate
-            est magnam facilis ad sit atque consectetur nesciunt et praesentium
-            reiciendis, doloremque quibusdam iste quidem vero consequuntur
-            corrupti. Eveniet accusamus excepturi rerum voluptates saepe beatae
-            repellat eligendi reprehenderit, nam, aspernatur alias dolore
-            repellendus deserunt vero! Debitis.
-          </p>
-          <a href="/">View full project</a>
+          <h3>{data.work}</h3>
+          <h2>{data.title}</h2>
+          <p>{data.description}</p>
+          <a href={data.link || '/'}>View full project</a>
         </Details>
       </Container>
     </Wrapper>
-  );
+  )
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   max-width: 1024px;
   width: 100%;
   margin-inline: auto;
@@ -45,11 +44,11 @@ const Wrapper = styled.div`
   @media (max-width: 500px) {
     padding-inline: 1rem;
   }
-`;
+`
 
 const Container = styled.article`
   display: flex;
-  flex-direction: ${({ reverse }) => (reverse ? "row-reverse" : "row")};
+  flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
   flex: 1;
   max-height: 500px;
   width: 736px;
@@ -63,7 +62,7 @@ const Container = styled.article`
     width: 100%;
     gap: 1.5rem;
   }
-`;
+`
 
 const ImageContainer = styled.div`
   flex: 0.5;
@@ -84,7 +83,7 @@ const ImageContainer = styled.div`
       height: 250px;
     }
   }
-`;
+`
 
 const Details = styled.div`
   flex: 0.55;
@@ -144,4 +143,4 @@ const Details = styled.div`
     h3 {
     }
   }
-`;
+`

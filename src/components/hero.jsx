@@ -1,23 +1,22 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
-import { BlobText, Navbar } from "components";
-import homeBackgroundImg from "assets/images/home-bg.png";
-import workBackgroundImg from "assets/images/work-bg.png";
-import { colors } from "constants";
-import { Fade } from "react-awesome-reveal";
-import { useLocation } from "react-router-dom";
-import quotationMarkWhite from "assets/images/quotation-mark-white.svg";
-import servicesBackgroundImg from "assets/images/services-bg.svg";
+import React from 'react'
+import styled, { keyframes } from 'styled-components'
+import { BlobText } from 'components'
+import homeBackgroundImg from 'assets/images/home-bg.png'
+import workBackgroundImg from 'assets/images/work-bg.png'
+import { colors } from 'constants'
+import { Fade } from 'react-awesome-reveal'
+import { useLocation } from 'react-router-dom'
+import quotationMarkWhite from 'assets/images/quotation-mark-white.svg'
+import servicesBackgroundImg from 'assets/images/services-bg.svg'
 
 export default function HeroSection() {
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
 
   return (
     <Background pathname={pathname}>
-      <Navbar />
       <Hero pathname={pathname}>
         <HomeAndWorkSpotlight pathname={pathname}>
-          {pathname === "/" && (
+          {pathname === '/' && (
             <>
               <Fade triggerOnce duration={1500} delay={800}>
                 <h1>Building the Future</h1>
@@ -31,13 +30,13 @@ export default function HeroSection() {
             </>
           )}
 
-          {pathname === "/work" && (
+          {pathname === '/work' && (
             <>
               <Fade triggerOnce duration={1500} delay={800}>
                 <img
-                  style={{ marginBottom: "1rem" }}
+                  style={{ marginBottom: '1rem' }}
                   src={quotationMarkWhite}
-                  alt="quotes"
+                  alt='quotes'
                 />
               </Fade>
               <Fade triggerOnce duration={1500} delay={800}>
@@ -52,7 +51,7 @@ export default function HeroSection() {
             </>
           )}
 
-          {pathname === "/about" && (
+          {pathname === '/about' && (
             <AboutandServicesSpotlight>
               <div>
                 <Fade triggerOnce duration={1500} delay={800}>
@@ -63,14 +62,14 @@ export default function HeroSection() {
                     to help brands reach their full potential.
                   </p>
                   <Blob>
-                    <BlobText text="Play video" />
+                    <BlobText text='Play video' variant='light' />
                   </Blob>
                 </Fade>
               </div>
             </AboutandServicesSpotlight>
           )}
 
-          {(pathname === "/services" || pathname === "/contact") && (
+          {(pathname === '/services' || pathname === '/contact') && (
             <AboutandServicesSpotlight>
               <div style={{ flex: 0.5 }}>
                 <Fade triggerOnce duration={1500} delay={800}>
@@ -90,7 +89,7 @@ export default function HeroSection() {
               <ServicesHeroBg>
                 <Fade triggerOnce duration={1500} delay={800}>
                   <ServicesBackground>
-                    <img src={servicesBackgroundImg} alt="hero" />
+                    <img src={servicesBackgroundImg} alt='hero' />
                   </ServicesBackground>
                 </Fade>
               </ServicesHeroBg>
@@ -104,10 +103,10 @@ export default function HeroSection() {
         duration={1500}
         delay={1200}
         style={{
-          position: "absolute",
+          position: 'absolute',
           zIndex: 3,
-          left: "50%",
-          transform: "tranlateX(-50%)",
+          left: '50%',
+          transform: 'tranlateX(-50%)',
           bottom: window.innerWidth > 400 ? 30 : 70,
         }}
       >
@@ -116,47 +115,48 @@ export default function HeroSection() {
         </BottomScroll>
       </Fade>
     </Background>
-  );
+  )
 }
 const Background = styled.section`
   position: relative;
   background-image: ${({ pathname }) =>
-    pathname === "/" || pathname === "/about"
+    pathname === '/' || pathname === '/about'
       ? `url(${homeBackgroundImg})`
-      : pathname === "/work"
+      : pathname === '/work'
       ? `url(${workBackgroundImg})`
-      : "none"};
+      : 'none'};
   background-color: ${colors.black};
   background-position: center;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     background-color: ${({ pathname }) =>
-      pathname === "/work" ? "rgba(0, 0, 0, 0.85)" : "rgba(0, 0, 0, 0)"};
+      pathname === '/work' ? 'rgba(0, 0, 0, 0.85)' : 'rgba(0, 0, 0, 0)'};
     z-index: 0;
   }
-`;
+`
 
 const Hero = styled.div`
   position: relative;
   max-width: 1024px;
   margin-inline: auto;
-  height: calc(100vh - 120px);
+  height: 100vh;
   display: flex;
   justify-content: ${({ pathname }) =>
-    pathname === "/about"
-      ? "flex-start"
-      : pathname === "/services"
-      ? "space-between"
-      : "center"};
+    pathname === '/about'
+      ? 'flex-start'
+      : pathname === '/services'
+      ? 'space-between'
+      : 'center'};
   align-items: center;
 
   @media (max-width: 728px) {
@@ -166,16 +166,16 @@ const Hero = styled.div`
   @media (max-width: 400px) {
     margin-inline: 1rem;
   }
-`;
+`
 
 const HomeAndWorkSpotlight = styled.div`
   color: ${colors.white};
   text-align: center;
   position: relative;
-  top: ${({ pathname }) =>
-    pathname === "/about" || pathname === "/services" || pathname === "/contact"
-      ? "0"
-      : "-50px"};
+  /* top: ${({ pathname }) =>
+    pathname === '/about' || pathname === '/services' || pathname === '/contact'
+      ? '0'
+      : '-50px'}; */
   z-index: 1;
   width: 100%;
 
@@ -197,11 +197,11 @@ const HomeAndWorkSpotlight = styled.div`
   @media (max-width: 728px) {
     margin-inline: auto;
   }
-`;
+`
 
 const Subtitle = styled.p`
   font-size: clamp(1rem, 4vw, 1.1rem);
-`;
+`
 
 const scroll = keyframes`
   0% {
@@ -217,7 +217,7 @@ const scroll = keyframes`
     transform: translate(0, 120%);
     opacity: 0
   }
-`;
+`
 
 const BottomScroll = styled.div`
   width: 20px;
@@ -236,17 +236,16 @@ const BottomScroll = styled.div`
     border-radius: 50%;
     animation: ${scroll} 1500ms linear infinite;
   }
-`;
+`
 
 const QuoteAuthor = styled.p`
   opacity: 0.7;
   font-size: clamp(0.875rem, 2.5vw, 1.1rem);
-`;
+`
 
 const AboutandServicesSpotlight = styled.article`
   text-align: left;
   position: relative;
-  top: -50px;
   margin-inline: 3rem;
   display: flex;
   align-items: center;
@@ -276,7 +275,7 @@ const AboutandServicesSpotlight = styled.article`
   @media (max-width: 400px) {
     margin-inline: 1rem;
   }
-`;
+`
 
 const Blob = styled.div`
   margin-top: 2rem;
@@ -285,14 +284,14 @@ const Blob = styled.div`
   @media (max-width: 728px) {
     margin-inline: auto;
   }
-`;
+`
 
 const ServicesHeroBg = styled.section`
   flex: 0.5;
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+`
 
 const ServicesBackground = styled.div`
   width: 90%;
@@ -321,4 +320,4 @@ const ServicesBackground = styled.div`
       display: none;
     }
   }
-`;
+`

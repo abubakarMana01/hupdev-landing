@@ -1,28 +1,36 @@
-*, *::after, *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body, button {
-    font-family: 'Inter', sans-serif;
+body,
+button {
+  font-family: 'Inter', sans-serif;
 }
 
-body::-webkit-scrollbar {
-  width: 12px;
+body {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+}
+
+*::-webkit-scrollbar {
+  width: 14px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #eee;
-  border: 2px solid rgb(119, 119, 119);
+  background-color: #ddd;
+  border: 2px solid #000;
   border-radius: 8px;
 }
 *::-webkit-scrollbar-track {
-  background: rgb(119, 119, 119);
+  background: #000;
 }
 
-
 a {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 }

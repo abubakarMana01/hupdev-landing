@@ -1,12 +1,68 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
 
-import Hero from "components/hero";
-import { ProjectWork } from "components";
-import { colors } from "constants";
+import Hero from 'components/hero'
+import { ProjectWork } from 'components'
+import { colors } from 'constants'
+
+const WORKS = [
+  {
+    id: '2',
+    title: 'Nigerian B2C E-commerce 2',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, nobis nesciunt reiciendis doloribus fuga harum laboriosam deserunt sit cupiditate mollitia quam suscipit dolorum quos dolorem cumque officia temporibus. Reiciendis, error?',
+    work: 'Mobile and Web Development',
+    category: ['development'],
+    image: '',
+    link: '',
+  },
+  {
+    id: '3',
+    title: 'Nigerian B2C E-commerce Brand 3',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate est magnam facilis ad sit atque consectetur nesciunt et praesentium reiciendis, doloremque quibusdam iste quidem vero consequuntur corrupti. Eveniet accusamus excepturi rerum voluptates saepe beatae repellat eligendi reprehenderit, nam, aspernatur alias dolore repellendus deserunt vero! Debitis.',
+    work: 'UI/UX Design',
+    category: ['design'],
+    image: '',
+    link: '',
+  },
+  {
+    id: '1',
+    title: 'Nigerian B2C E-commerce Brand 1',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate est magnam facilis ad sit atque consectetur nesciunt et praesentium reiciendis, doloremque quibusdam iste quidem vero consequuntur corrupti. Eveniet accusamus excepturi rerum voluptates saepe beatae repellat eligendi reprehenderit, nam, aspernatur alias dolore repellendus deserunt vero! Debitis.',
+    work: 'UI/UX Design, Mobile and Web Development',
+    category: ['development', 'design'],
+    image: '',
+    link: '',
+  },
+  {
+    id: '4',
+    title: 'Nigerian B2C E-commerce Brand 4',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate est magnam facilis ad sit atque consectetur nesciunt et praesentium reiciendis, doloremque quibusdam iste quidem vero consequuntur corrupti. Eveniet accusamus excepturi rerum voluptates saepe beatae repellat eligendi reprehenderit, nam, aspernatur alias dolore repellendus deserunt vero! Debitis.',
+    work: 'UI/UX Design, Mobile and Web Development',
+    category: ['development', 'design'],
+    image: '',
+    link: '',
+  },
+]
 
 export default function Work() {
-  const [activeFilter, setActiveFilter] = useState("all");
+  const [activeFilter, setActiveFilter] = useState('all')
+  const [activeWorks, setActiveWorks] = useState(WORKS)
+
+  useEffect(() => {
+    if (activeFilter !== 'all') {
+      setActiveWorks(
+        WORKS.filter((work) => {
+          return work.category.includes(activeFilter)
+        })
+      )
+    } else {
+      setActiveWorks(WORKS)
+    }
+  }, [activeFilter])
 
   return (
     <>
@@ -17,27 +73,27 @@ export default function Work() {
           <li
             style={{
               backgroundColor:
-                activeFilter === "all" ? colors.primary : colors.black,
+                activeFilter === 'all' ? colors.primary : colors.black,
             }}
-            onClick={() => setActiveFilter("all")}
+            onClick={() => setActiveFilter('all')}
           >
             All
           </li>
           <li
             style={{
               backgroundColor:
-                activeFilter === "development" ? colors.primary : colors.black,
+                activeFilter === 'development' ? colors.primary : colors.black,
             }}
-            onClick={() => setActiveFilter("development")}
+            onClick={() => setActiveFilter('development')}
           >
             Development
           </li>
           <li
             style={{
               backgroundColor:
-                activeFilter === "design" ? colors.primary : colors.black,
+                activeFilter === 'design' ? colors.primary : colors.black,
             }}
-            onClick={() => setActiveFilter("design")}
+            onClick={() => setActiveFilter('design')}
           >
             Design
           </li>
@@ -45,20 +101,18 @@ export default function Work() {
       </FilterWrapper>
 
       <Projects>
-        <ProjectWork />
-        <ProjectWork reverse />
-        <ProjectWork />
-        <ProjectWork reverse />
-        <ProjectWork />
+        {activeWorks.map((work, i) => {
+          return <ProjectWork data={work} key={work.id} reverse={i % 2 !== 0} />
+        })}
       </Projects>
     </>
-  );
+  )
 }
 
 const Projects = styled.div`
   background-color: ${colors.black};
   color: ${colors.white};
-`;
+`
 
 const FilterWrapper = styled.section`
   height: 100px;
@@ -66,7 +120,7 @@ const FilterWrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+`
 
 const Filters = styled.ul`
   display: flex;
@@ -85,4 +139,4 @@ const Filters = styled.ul`
   li:hover {
     opacity: 0.7;
   }
-`;
+`
