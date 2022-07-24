@@ -172,10 +172,6 @@ const HomeAndWorkSpotlight = styled.div`
   color: ${colors.white};
   text-align: center;
   position: relative;
-  /* top: ${({ pathname }) =>
-    pathname === '/about' || pathname === '/services' || pathname === '/contact'
-      ? '0'
-      : '-50px'}; */
   z-index: 1;
   width: 100%;
 

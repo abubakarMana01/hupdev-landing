@@ -5,7 +5,7 @@ import Hero from 'components/hero'
 import { ProjectWork } from 'components'
 import { colors } from 'constants'
 
-const WORKS = [
+const WORKS_DATA = [
   {
     id: '2',
     title: 'Nigerian B2C E-commerce 2',
@@ -13,8 +13,8 @@ const WORKS = [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, nobis nesciunt reiciendis doloribus fuga harum laboriosam deserunt sit cupiditate mollitia quam suscipit dolorum quos dolorem cumque officia temporibus. Reiciendis, error?',
     work: 'Mobile and Web Development',
     category: ['development'],
-    image: '',
-    link: '',
+    image: '/',
+    link: '/',
   },
   {
     id: '3',
@@ -23,8 +23,8 @@ const WORKS = [
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate est magnam facilis ad sit atque consectetur nesciunt et praesentium reiciendis, doloremque quibusdam iste quidem vero consequuntur corrupti. Eveniet accusamus excepturi rerum voluptates saepe beatae repellat eligendi reprehenderit, nam, aspernatur alias dolore repellendus deserunt vero! Debitis.',
     work: 'UI/UX Design',
     category: ['design'],
-    image: '',
-    link: '',
+    image: '/',
+    link: '/',
   },
   {
     id: '1',
@@ -33,8 +33,8 @@ const WORKS = [
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate est magnam facilis ad sit atque consectetur nesciunt et praesentium reiciendis, doloremque quibusdam iste quidem vero consequuntur corrupti. Eveniet accusamus excepturi rerum voluptates saepe beatae repellat eligendi reprehenderit, nam, aspernatur alias dolore repellendus deserunt vero! Debitis.',
     work: 'UI/UX Design, Mobile and Web Development',
     category: ['development', 'design'],
-    image: '',
-    link: '',
+    image: '/',
+    link: '/',
   },
   {
     id: '4',
@@ -43,24 +43,25 @@ const WORKS = [
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate est magnam facilis ad sit atque consectetur nesciunt et praesentium reiciendis, doloremque quibusdam iste quidem vero consequuntur corrupti. Eveniet accusamus excepturi rerum voluptates saepe beatae repellat eligendi reprehenderit, nam, aspernatur alias dolore repellendus deserunt vero! Debitis.',
     work: 'UI/UX Design, Mobile and Web Development',
     category: ['development', 'design'],
-    image: '',
-    link: '',
+    image: '/',
+    link: '/',
   },
 ]
 
 export default function Work() {
   const [activeFilter, setActiveFilter] = useState('all')
-  const [activeWorks, setActiveWorks] = useState(WORKS)
+  const [filteredWorks, setFilteredWorks] = useState([])
+
+  useEffect(() => {}, [])
 
   useEffect(() => {
-    if (activeFilter !== 'all') {
-      setActiveWorks(
-        WORKS.filter((work) => {
-          return work.category.includes(activeFilter)
-        })
-      )
+    if (activeFilter === 'all') {
+      setFilteredWorks([...WORKS_DATA])
     } else {
-      setActiveWorks(WORKS)
+      const filter = WORKS_DATA.filter((work) =>
+        work.category.includes(activeFilter)
+      )
+      setFilteredWorks(filter)
     }
   }, [activeFilter])
 
@@ -101,9 +102,9 @@ export default function Work() {
       </FilterWrapper>
 
       <Projects>
-        {activeWorks.map((work, i) => {
-          return <ProjectWork data={work} key={work.id} reverse={i % 2 !== 0} />
-        })}
+        {filteredWorks.map((work, i) => (
+          <ProjectWork key={work.id} data={work} reverse={i % 2 !== 0} />
+        ))}
       </Projects>
     </>
   )

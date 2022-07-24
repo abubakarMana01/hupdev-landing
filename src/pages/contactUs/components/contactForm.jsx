@@ -191,7 +191,7 @@ const CategoryContainer = styled.button`
   }
 `
 
-const BudgetContainer = styled.form`
+const BudgetContainer = styled.div`
   input {
   }
 
