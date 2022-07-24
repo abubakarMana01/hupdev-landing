@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hupdev-landing/static/css/main.c7e4f8b8.css",
-    "main.js": "/hupdev-landing/static/js/main.f8564e07.js",
+    "main.js": "/hupdev-landing/static/js/main.6ec670bb.js",
     "static/media/work-bg.png": "/hupdev-landing/static/media/work-bg.6358a57cab2c16317565.png",
     "static/media/home-bg.png": "/hupdev-landing/static/media/home-bg.b350b3a875e52f2ee8b2.png",
     "static/media/project-img1.svg": "/hupdev-landing/static/media/project-img1.4bfdd46869d4e8e5346158c968ab0d3e.svg",
@@ -22,10 +22,10 @@
     "static/media/round-ellipse.svg": "/hupdev-landing/static/media/round-ellipse.a5f9c888dcf3dca6ee40b9e10e8c032c.svg",
     "static/media/down-arrow.svg": "/hupdev-landing/static/media/down-arrow.45a1a7112bf6255f362b38eaa86ac6de.svg",
     "main.c7e4f8b8.css.map": "/hupdev-landing/static/css/main.c7e4f8b8.css.map",
-    "main.f8564e07.js.map": "/hupdev-landing/static/js/main.f8564e07.js.map"
+    "main.6ec670bb.js.map": "/hupdev-landing/static/js/main.6ec670bb.js.map"
   },
   "entrypoints": [
     "static/css/main.c7e4f8b8.css",
-    "static/js/main.f8564e07.js"
+    "static/js/main.6ec670bb.js"
   ]
 }
