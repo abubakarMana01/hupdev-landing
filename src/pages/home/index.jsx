@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { AboutSection } from 'components'
 import Connect from './components/sections/connect'
@@ -8,6 +8,10 @@ import Hero from 'components/hero'
 import Quote from './components/sections/quote'
 
 export default function Home() {
+  useEffect(() => {
+    window.scroll(0, 0)
+  }, [])
+
   return (
     <Wrapper>
       <Hero />

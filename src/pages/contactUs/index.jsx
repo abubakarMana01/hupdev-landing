@@ -1,11 +1,15 @@
-import React from "react";
-import Hero from "components/hero";
-import styled from "styled-components";
-import { colors } from "constants";
-import quoteAuthorImg from "assets/images/members/team-member-1.png";
-import ContactForm from "./components/contactForm";
+import React, { useEffect } from 'react'
+import Hero from 'components/hero'
+import styled from 'styled-components'
+import { colors } from 'constants'
+import quoteAuthorImg from 'assets/images/members/team-member-1.png'
+import ContactForm from './components/contactForm'
 
 export default function ContactUs() {
+  useEffect(() => {
+    window.scroll(0, 0)
+  }, [])
+
   return (
     <>
       <Hero />
@@ -14,7 +18,7 @@ export default function ContactUs() {
         <PromoContainer>
           <PromoImage>
             <ImageContainer>
-              <img src={quoteAuthorImg} alt="author" />
+              <img src={quoteAuthorImg} alt='author' />
             </ImageContainer>
           </PromoImage>
           <PromoDetails>
@@ -30,7 +34,7 @@ export default function ContactUs() {
 
       <ContactForm />
     </>
-  );
+  )
 }
 
 const PromoWrapper = styled.div`
@@ -45,7 +49,7 @@ const PromoWrapper = styled.div`
     font-weight: 500;
     font-size: 1rem;
   }
-`;
+`
 
 const PromoContainer = styled.article`
   width: 100%;
@@ -57,7 +61,7 @@ const PromoContainer = styled.article`
   @media (max-width: 520px) {
     flex-direction: column;
   }
-`;
+`
 
 const ImageContainer = styled.div`
   width: 80px;
@@ -70,9 +74,9 @@ const ImageContainer = styled.div`
     height: 100%;
     object-fit: cover;
   }
-`;
+`
 
-const PromoImage = styled.div``;
+const PromoImage = styled.div``
 
 const PromoDetails = styled.div`
   h3 {
@@ -88,4 +92,4 @@ const PromoDetails = styled.div`
     text-align: center;
     margin-top: 0.7rem;
   }
-`;
+`

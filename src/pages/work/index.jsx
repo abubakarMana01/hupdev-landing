@@ -52,7 +52,9 @@ export default function Work() {
   const [activeFilter, setActiveFilter] = useState('all')
   const [filteredWorks, setFilteredWorks] = useState([])
 
-  useEffect(() => {}, [])
+  useEffect(() => {
+    window.scroll(0, 0)
+  }, [])
 
   useEffect(() => {
     if (activeFilter === 'all') {
